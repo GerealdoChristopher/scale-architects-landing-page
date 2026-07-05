@@ -12,12 +12,14 @@ body {
   font-weight: var(--fw-regular);
   line-height: var(--lh-normal);
   color: var(--clr-text-primary);
+  background: var(--gradient-mesh);
+  background-attachment: fixed;
 }
 
 h1, .h1 {
   font-family: var(--ff-display);
   font-size: var(--fs-h1);
-  font-weight: var(--fw-extrabold);
+  font-weight: var(--fw-black);
   line-height: var(--lh-tight);
   letter-spacing: var(--ls-tight);
   color: var(--clr-primary-800);
@@ -105,8 +107,9 @@ em, i {
 }
 
 mark, .highlight {
-  background: linear-gradient(180deg, transparent 60%, var(--clr-accent-100) 60%);
-  padding: 0 0.15em;
+  background: linear-gradient(180deg, transparent 55%, var(--clr-accent-100) 55%);
+  padding: 0 0.2em;
+  border-radius: 2px;
 }
 
 a {
@@ -114,11 +117,9 @@ a {
   font-weight: var(--fw-medium);
   text-decoration: underline;
   text-decoration-color: var(--clr-accent-200);
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
   text-decoration-thickness: 2px;
-  transition: 
-    color var(--transition-fast),
-    text-decoration-color var(--transition-fast);
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
 }
 
 a:hover,
@@ -160,10 +161,10 @@ ol:not([class]) li {
 
 blockquote {
   border-left: 4px solid var(--clr-accent-300);
-  padding: var(--space-sm) var(--space-md);
-  margin: var(--space-md) 0;
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
   background-color: var(--clr-neutral-100);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
 blockquote p {
@@ -173,7 +174,7 @@ blockquote p {
 
 blockquote cite {
   display: block;
-  margin-top: var(--space-2xs);
+  margin-top: var(--space-xs);
   font-size: var(--fs-small);
   font-style: normal;
   color: var(--clr-text-muted);
@@ -183,7 +184,7 @@ code {
   font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
   font-size: 0.9em;
   background-color: var(--clr-neutral-100);
-  padding: 0.15em 0.4em;
+  padding: 0.2em 0.5em;
   border-radius: var(--radius-xs);
   color: var(--clr-primary-700);
 }
@@ -191,7 +192,7 @@ code {
 pre {
   background-color: var(--clr-neutral-900);
   color: var(--clr-neutral-100);
-  padding: var(--space-md);
+  padding: var(--space-lg);
   border-radius: var(--radius-md);
   overflow-x: auto;
   margin: var(--space-md) 0;
@@ -207,8 +208,9 @@ pre code {
 hr {
   border: none;
   height: 1px;
-  background-color: var(--border-color);
-  margin: var(--space-xl) 0;
+  background: var(--gradient-accent);
+  opacity: 0.3;
+  margin: var(--space-2xl) 0;
 }
 
 ::selection {
@@ -241,7 +243,7 @@ hr {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--clr-accent-400), var(--clr-accent-600));
+  background: var(--gradient-gold);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -259,9 +261,13 @@ hr {
   font-weight: var(--fw-medium);
 }
 
+.font-black {
+  font-weight: var(--fw-black);
+}
+
 .uppercase {
   text-transform: uppercase;
-  letter-spacing: var(--ls-wide);
+  letter-spacing: var(--ls-wider);
 }
 
 @media (max-width: 768px) {
@@ -271,5 +277,13 @@ hr {
 
   .lead {
     font-size: var(--fs-body);
+  }
+
+  h1, .h1 {
+    font-size: var(--fs-h2);
+  }
+
+  h2, .h2 {
+    font-size: var(--fs-h3);
   }
 }
