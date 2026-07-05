@@ -58,13 +58,10 @@
 ## 🌐 Live Demo
 
 <p align="center">
-  <a href="https://your-username.github.io/scale-architects-landing-page/">
+  <a href="https:/GerealdoChristopher.github.io/scale-architects-landing-page/">
     <img src="https://img.shields.io/badge/🚀_View_Live_Demo-0A2647?style=for-the-badge&logo=github&logoColor=white" alt="View Live Demo">
   </a>
 </p>
-
-> Replace `your-username` with your actual GitHub username after deploying.
-
 ---
 
 ## ✨ Key Features
