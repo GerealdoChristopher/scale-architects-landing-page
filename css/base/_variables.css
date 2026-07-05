@@ -1,0 +1,56 @@
+/* ==================== CSS CUSTOM PROPERTIES ==================== */
+/* Ubah tema seluruh site hanya dari file ini */
+
+:root {
+  /* --- Color Palette --- */
+  --color-primary: #0A2647;
+  --color-primary-light: #144272;
+  --color-accent: #D4A853;
+  --color-accent-hover: #C19A3E;
+  --color-bg: #FAFAFA;
+  --color-bg-alt: #F3F4F6;
+  --color-text: #1E1E1E;
+  --color-text-muted: #6B7280;
+  --color-text-light: #9CA3AF;
+  --color-success: #10B981;
+  --color-white: #FFFFFF;
+  --color-border: #E5E7EB;
+
+  /* --- Typography --- */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-hero: clamp(2.25rem, 4vw, 3.5rem);
+  --font-size-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --font-size-h3: 1.5rem;
+  --font-size-body: 1.125rem;
+  --font-size-small: 0.875rem;
+  --line-height-tight: 1.15;
+  --line-height-body: 1.7;
+
+  /* --- Spacing --- */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+
+  /* --- Layout --- */
+  --max-width: 1200px;
+  --container-padding: 1.5rem;
+
+  /* --- Border Radius --- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+
+  /* --- Transitions --- */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+}

@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies (kalau nanti pakai npm)
+node_modules/
+
+# Build output (kalau nanti pakai build tools)
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
