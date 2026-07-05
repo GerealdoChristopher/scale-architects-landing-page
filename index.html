@@ -19,18 +19,28 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
 </head>
 <body>
 
+  <canvas class="particle-canvas"></canvas>
+
+  <div class="page-loader">
+    <div class="page-loader__spinner"></div>
+  </div>
+
   <header class="header">
     <div class="container container--wide">
-      <a href="#" class="header__logo" aria-label="Scale Architects Home">Scale <span>Architects</span></a>
+      <a href="#" class="header__logo" aria-label="Scale Architects Home">
+        <span class="header__logo-icon">📐</span>
+        Scale <span>Architects</span>
+      </a>
       <nav class="header__nav" aria-label="Main navigation">
         <a href="#case-studies">Case Studies</a>
         <a href="#about">About</a>
         <a href="#offer">Services</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact" class="btn btn--outline btn--sm">Book a Call</a>
       </nav>
       <button class="header__mobile-toggle" aria-label="Open menu">☰</button>
@@ -40,71 +50,136 @@
   <main>
 
     <section class="hero" id="home">
+      <div class="hero__grid-bg"></div>
       <div class="container container--wide">
-        <div class="hero__content">
-          <p class="hero__overline">Scale Architects</p>
+        <div class="hero__content reveal-left">
+          <p class="hero__overline">
+            <span class="hero__overline-dot"></span>
+            Scale Architects
+          </p>
           <h1 class="hero__headline">I Help Mid-Sized Businesses Turn Stagnant Revenue Into <span>Predictable, Scalable Growth</span> — Without Burning Out Their Teams.</h1>
           <p class="hero__subheadline">Data-driven consulting for companies doing $1M–$10M who know they're leaving money on the table. No fluff. No textbook theory. Just actionable strategy that works in the real world.</p>
           <div class="hero__cta-group">
-            <a href="#contact" class="btn btn--primary btn--lg">Book Your Free Growth Diagnostic</a>
+            <a href="#contact" class="btn btn--primary btn--lg btn--glow">Book Your Free Growth Diagnostic</a>
             <span class="hero__cta-note">Available for new clients</span>
           </div>
+          <div class="hero__stats">
+            <div>
+              <span class="hero__stat-number">40+</span>
+              <span class="hero__stat-label">Businesses Transformed</span>
+            </div>
+            <div>
+              <span class="hero__stat-number">12+</span>
+              <span class="hero__stat-label">Years Experience</span>
+            </div>
+            <div>
+              <span class="hero__stat-number">4</span>
+              <span class="hero__stat-label">Industries Served</span>
+            </div>
+          </div>
         </div>
-        <div class="hero__image-wrapper">
+        <div class="hero__image-wrapper reveal-right">
           <div class="hero__image-accent"></div>
-          <img src="images/hero-portrait.png" alt="Scale Architects — Business Growth Consultant" class="hero__image" width="500" height="625" loading="eager">
+          <div class="hero__image-dots">
+            <span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span>
+            <span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span>
+            <span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span>
+            <span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span>
+            <span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span><span class="hero__image-dot"></span>
+          </div>
+          <img src="images/hero-portrait.png" alt="Scale Architects — Business Growth Consultant" class="hero__image" width="500" height="625" loading="eager" data-tilt="8">
         </div>
+      </div>
+      <div class="hero__scroll-indicator">
+        <span class="hero__scroll-text">Scroll</span>
+        <span class="hero__scroll-line"></span>
       </div>
     </section>
 
-    <section class="trust-bar">
+    <section class="trust-bar reveal">
       <div class="container container--wide">
         <p class="trust-bar__label">Trusted by teams across Southeast Asia</p>
-        <div class="trust-bar__counter">
-          <span>40+</span> Businesses Transformed
-          <span class="trust-bar__counter-text">Across Logistics, SaaS, F&B, Manufacturing, and Retail</span>
+        <div class="trust-bar__content">
+          <div class="trust-bar__logos">
+            <span class="trust-bar__logo">TechDistributor</span>
+            <span class="trust-bar__logo">HealthyFoods</span>
+            <span class="trust-bar__logo">AutoParts Express</span>
+            <span class="trust-bar__logo">LogiTrans</span>
+            <span class="trust-bar__logo">CloudSuite</span>
+          </div>
+          <span class="trust-bar__divider"></span>
+          <div class="trust-bar__counter">
+            <span class="trust-bar__counter-number"><span>40</span><span class="trust-bar__counter-plus">+</span></span>
+            <span class="trust-bar__counter-text">Businesses Transformed Across <span>Logistics, SaaS, F&B, Manufacturing, and Retail</span></span>
+          </div>
+        </div>
+        <div class="trust-bar__marquee">
+          <div class="trust-bar__marquee-track">
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Revenue Growth</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Operational Efficiency</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Team Scaling</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Profit Maximization</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Strategic Clarity</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Revenue Growth</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Operational Efficiency</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Team Scaling</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Profit Maximization</span>
+            <span class="trust-bar__marquee-item"><span class="trust-bar__marquee-dot"></span>Strategic Clarity</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="problem" id="problem">
       <div class="container container--wide">
-        <div>
-          <h2 class="problem__headline">Sound Familiar? You're Not Alone.</h2>
+        <div class="problem__content reveal-left">
+          <h2 class="problem__headline">Sound Familiar? <span>You're Not Alone.</span></h2>
           <div class="problem__list">
             <div class="problem__item">
-              <svg class="problem__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span class="problem__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </span>
               <span class="problem__item-text">You've hit a revenue ceiling and every growth attempt feels like pushing a boulder uphill.</span>
             </div>
             <div class="problem__item">
-              <svg class="problem__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span class="problem__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </span>
               <span class="problem__item-text">Your team is busy all day, but the needle barely moves.</span>
             </div>
             <div class="problem__item">
-              <svg class="problem__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span class="problem__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </span>
               <span class="problem__item-text">You're the smartest person in the room — and that's exactly the problem. Decisions bottleneck at you.</span>
             </div>
             <div class="problem__item">
-              <svg class="problem__item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span class="problem__item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </span>
               <span class="problem__item-text">Marketing spends more. Sales promises more. Operations delivers less. And you're stuck in the middle.</span>
             </div>
           </div>
           <p class="problem__bridge">This isn't a talent problem. It's a clarity and system problem. And it's fixable.</p>
         </div>
-        <div class="problem__image-wrapper">
-          <img src="images/problem-silhouette.png" alt="Business owner feeling overwhelmed" class="problem__image" width="450" height="600" loading="lazy">
+        <div class="problem__image-wrapper reveal-right">
+          <img src="images/problem-silhouette.png" alt="Business owner feeling overwhelmed" class="problem__image" width="450" height="600" loading="lazy" data-tilt="6">
+          <div class="problem__image-badge">
+            <span class="problem__image-badge-icon">⚠️</span>
+            <span class="problem__image-badge-text">It doesn't have to be this way</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="case-studies" id="case-studies">
       <div class="container container--wide">
-        <h2 class="case-studies__headline">Proof, Not Promises: Client Results That Speak</h2>
-        <p class="case-studies__subheadline">Three transformations. Three industries. One common thread — clarity turned into action.</p>
+        <h2 class="case-studies__headline reveal">Proof, <span>Not Promises</span>: Client Results That Speak</h2>
+        <p class="case-studies__subheadline reveal">Three transformations. Three industries. One common thread — clarity turned into action.</p>
 
-        <article class="case-study">
+        <article class="case-study reveal-left">
           <div class="case-study__image-wrapper">
-            <img src="images/casestudy-logistics.png" alt="Logistics company transformation — before and after" class="case-study__image" width="600" height="400" loading="lazy">
+            <img src="images/casestudy-logistics.png" alt="Logistics company transformation — before and after" class="case-study__image" width="600" height="400" loading="lazy" data-tilt="5">
           </div>
           <div>
             <span class="case-study__label">Case Study 01</span>
@@ -113,15 +188,15 @@
             <p class="case-study__section-title">What We Did</p>
             <p class="case-study__text">Full operational audit → Identified $340K in annual cost leakage → Redesigned org structure → Built KPI dashboards for department heads → Implemented weekly 30-minute accountability huddles.</p>
             <div class="case-study__results">
-              <div>
-                <span class="case-study__result-number">62%</span>
+              <div class="case-study__result-item">
+                <span class="case-study__result-number" data-counter="62" data-suffix="%" data-duration="1800">62%</span>
                 <span class="case-study__result-label">Revenue Growth in 18 Months</span>
               </div>
-              <div>
+              <div class="case-study__result-item">
                 <span class="case-study__result-number">40%→11%</span>
                 <span class="case-study__result-label">Employee Turnover Drop</span>
               </div>
-              <div>
+              <div class="case-study__result-item">
                 <span class="case-study__result-number">80→45</span>
                 <span class="case-study__result-label">CEO Weekly Hours</span>
               </div>
@@ -133,9 +208,9 @@
           </div>
         </article>
 
-        <article class="case-study case-study--reverse">
+        <article class="case-study case-study--reverse reveal-right">
           <div class="case-study__image-wrapper">
-            <img src="images/casestudy-collaboration.png" alt="Consultant collaborating with SaaS client team" class="case-study__image" width="600" height="400" loading="lazy">
+            <img src="images/casestudy-collaboration.png" alt="Consultant collaborating with SaaS client team" class="case-study__image" width="600" height="400" loading="lazy" data-tilt="5">
           </div>
           <div>
             <span class="case-study__label">Case Study 02</span>
@@ -144,15 +219,15 @@
             <p class="case-study__section-title">What We Did</p>
             <p class="case-study__text">Unit economics deep dive → Customer segmentation analysis → Stripped 3 unprofitable product features → Repriced core offering → Restructured sales comp plan around profitable customers.</p>
             <div class="case-study__results">
-              <div>
-                <span class="case-study__result-number">55%</span>
+              <div class="case-study__result-item">
+                <span class="case-study__result-number" data-counter="55" data-suffix="%" data-duration="1800">55%</span>
                 <span class="case-study__result-label">Burn Rate Reduction</span>
               </div>
-              <div>
+              <div class="case-study__result-item">
                 <span class="case-study__result-number">7→19</span>
                 <span class="case-study__result-label">Months of Runway</span>
               </div>
-              <div>
+              <div class="case-study__result-item">
                 <span class="case-study__result-number">2.4×</span>
                 <span class="case-study__result-label">Series B Valuation</span>
               </div>
@@ -164,9 +239,9 @@
           </div>
         </article>
 
-        <article class="case-study">
+        <article class="case-study reveal-left">
           <div class="case-study__image-wrapper">
-            <img src="images/casestudy-victory.png" alt="Successful launch day celebration" class="case-study__image" width="600" height="400" loading="lazy">
+            <img src="images/casestudy-victory.png" alt="Successful launch day celebration" class="case-study__image" width="600" height="400" loading="lazy" data-tilt="5">
           </div>
           <div>
             <span class="case-study__label">Case Study 03</span>
@@ -175,15 +250,15 @@
             <p class="case-study__section-title">What We Did</p>
             <p class="case-study__text">Standardized operations playbook → Created location manager incentive structure → Built daily reporting system → Negotiated centralized supplier contracts → Succession planning for the owners.</p>
             <div class="case-study__results">
-              <div>
+              <div class="case-study__result-item">
                 <span class="case-study__result-number">6→2</span>
                 <span class="case-study__result-label">Underperforming Outlets</span>
               </div>
-              <div>
+              <div class="case-study__result-item">
                 <span class="case-study__result-number">7%→18%</span>
                 <span class="case-study__result-label">Profit Margin Increase</span>
               </div>
-              <div>
+              <div class="case-study__result-item">
                 <span class="case-study__result-number">7→4</span>
                 <span class="case-study__result-label">Day Workweek</span>
               </div>
@@ -199,81 +274,110 @@
 
     <section class="authority" id="about">
       <div class="container container--wide">
-        <div class="authority__image-wrapper">
-          <img src="images/authority-speaking.png" alt="Scale Architects consultant speaking at industry event" class="authority__image" width="450" height="562" loading="lazy">
+        <div class="authority__image-wrapper reveal-left">
+          <div class="authority__image-accent"></div>
+          <img src="images/authority-speaking.png" alt="Scale Architects consultant speaking at industry event" class="authority__image" width="450" height="562" loading="lazy" data-tilt="8">
+          <div class="authority__image-badge">
+            <span class="authority__image-badge-icon">🎤</span>
+            Trusted Advisor
+          </div>
         </div>
-        <div>
-          <h2 class="authority__headline">Why Work With Me?</h2>
+        <div class="reveal-right">
+          <h2 class="authority__headline">Why <span>Work With Me?</span></h2>
           <p class="authority__subheadline">I've been in the trenches. I've managed P&Ls, made tough calls, and know the difference between looking busy and driving results.</p>
           <div class="authority__stats">
-            <div>
-              <span class="authority__stat-number">12+</span>
+            <div class="authority__stat">
+              <span class="authority__stat-number" data-counter="12" data-suffix="+" data-duration="2000">12+</span>
               <span class="authority__stat-label">Years in Business Strategy & Operations</span>
             </div>
-            <div>
-              <span class="authority__stat-number">40+</span>
+            <div class="authority__stat">
+              <span class="authority__stat-number" data-counter="40" data-suffix="+" data-duration="2000">40+</span>
               <span class="authority__stat-label">Companies Advised Across Southeast Asia</span>
             </div>
-            <div>
+            <div class="authority__stat">
               <span class="authority__stat-number">$1M–$10M</span>
               <span class="authority__stat-label">Client Revenue Range — My Sweet Spot</span>
             </div>
-            <div>
-              <span class="authority__stat-number">4</span>
+            <div class="authority__stat">
+              <span class="authority__stat-number" data-counter="4" data-duration="1500">4</span>
               <span class="authority__stat-label">Industries: Logistics, SaaS, F&B, Manufacturing</span>
             </div>
           </div>
-          <p class="authority__subheadline">I bring operator experience, not just consulting frameworks. Every recommendation comes from having done it — not just having read about it.</p>
+          <div class="authority__quote">
+            <p class="authority__quote-text">I bring operator experience, not just consulting frameworks. Every recommendation comes from having done it — not just having read about it.</p>
+            <p class="authority__quote-author">— Scale Architects Principle</p>
+          </div>
+          <div class="authority__logos">
+            <span class="authority__logo">TechDistributor</span>
+            <span class="authority__logo">HealthyFoods Group</span>
+            <span class="authority__logo">AutoParts Express</span>
+            <span class="authority__logo">CloudSuite</span>
+            <span class="authority__logo">LogiTrans</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="testimonials" id="testimonials">
       <div class="container container--wide">
-        <h2 class="testimonials__headline">What Clients Say When I'm Not in the Room</h2>
+        <h2 class="testimonials__headline reveal">What Clients Say <span>When I'm Not in the Room</span></h2>
+        <p class="testimonials__subheadline reveal">Honest feedback from business owners who took the leap.</p>
         <div class="testimonials__grid">
-          <div class="testimonial-card">
-            <div class="testimonial-card__stars">★★★★★</div>
+          <div class="testimonial-card reveal-scale stagger-1">
+            <div class="testimonial-card__quote-icon">"</div>
+            <div class="testimonial-card__stars">
+              <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+            </div>
             <p class="testimonial-card__text">"We were skeptical of consultants. But within the first two weeks, he identified a pricing leak that had cost us $120K over 18 months. That alone paid his fees 5x over. He's now on retainer."</p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__author-avatar">RP</div>
-              <div>
+              <div class="testimonial-card__author-info">
                 <p class="testimonial-card__author-name">Rizky P.</p>
                 <p class="testimonial-card__author-role">Managing Director, TechDistributor</p>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <div class="testimonial-card__stars">★★★★★</div>
+          <div class="testimonial-card reveal-scale stagger-2">
+            <div class="testimonial-card__quote-icon">"</div>
+            <div class="testimonial-card__stars">
+              <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+            </div>
             <p class="testimonial-card__text">"What separates him from other consultants: he doesn't leave you with a 100-page deck. He leaves you with a 1-page action plan and offers to help you execute it. We've never had that before."</p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__author-avatar">LO</div>
-              <div>
+              <div class="testimonial-card__author-info">
                 <p class="testimonial-card__author-name">Linda O.</p>
                 <p class="testimonial-card__author-role">CFO, HealthyFoods Group</p>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <div class="testimonial-card__stars">★★★★★</div>
+          <div class="testimonial-card reveal-scale stagger-3">
+            <div class="testimonial-card__quote-icon">"</div>
+            <div class="testimonial-card__stars">
+              <span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span><span class="testimonial-card__star">★</span>
+            </div>
             <p class="testimonial-card__text">"I was working myself to death. He helped me restructure my leadership team, step back from daily operations, and focus on growth. Revenue is up, and my marriage is better. I'm not exaggerating."</p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__author-avatar">BS</div>
-              <div>
+              <div class="testimonial-card__author-info">
                 <p class="testimonial-card__author-name">Budi S.</p>
                 <p class="testimonial-card__author-role">Founder, AutoParts Express</p>
               </div>
             </div>
           </div>
         </div>
+        <div class="testimonials__cta reveal">
+          <a href="#contact" class="btn btn--outline btn--lg">Ready to Be the Next Success Story?</a>
+        </div>
       </div>
     </section>
 
     <section class="offer" id="offer">
       <div class="container container--narrow">
-        <h2 class="offer__headline">Let's Find Out What's Really Holding Your Business Back — Completely Risk-Free.</h2>
-        <p class="offer__subheadline">One session. Clear answers. A plan you can execute tomorrow morning.</p>
-        <div class="offer__card">
+        <h2 class="offer__headline reveal">Let's Find Out What's <span>Really Holding Your Business Back</span> — Completely Risk-Free.</h2>
+        <p class="offer__subheadline reveal">One session. Clear answers. A plan you can execute tomorrow morning.</p>
+        <div class="offer__card reveal-scale">
+          <span class="offer__card-badge">Most Popular</span>
           <h3 class="offer__card-title">The Growth Clarity Session</h3>
           <div class="offer__features">
             <div class="offer__feature">
@@ -296,33 +400,45 @@
           <div class="offer__pricing">
             <span class="offer__price">$750</span>
             <span class="offer__price-original">$1,500</span>
+            <span class="offer__price-save">Save 50%</span>
           </div>
           <div class="offer__cta">
-            <a href="#contact" class="btn btn--primary btn--lg btn--block">Apply for Your Clarity Session</a>
+            <a href="#contact" class="btn btn--primary btn--lg btn--block btn--glow">Apply for Your Clarity Session</a>
           </div>
           <div class="offer__guarantee">
+            <span class="offer__guarantee-icon">🛡️</span>
             <p class="offer__guarantee-title">The Guarantee</p>
             <p class="offer__guarantee-text">If you don't walk away from our session with at least 3 actionable insights worth 10x the fee, I'll refund every dollar. No questions. No hard feelings. In 12 years, I've never had to use this.</p>
           </div>
         </div>
-        <p class="offer__note text-small text-center">Not ready to commit? <a href="#contact">Book a free 15-minute call</a> first to see if we're a good fit.</p>
+        <p class="offer__note text-small text-center reveal">Not ready to commit? <a href="#contact">Book a free 15-minute call</a> first to see if we're a good fit.</p>
+        <div class="offer__trust-strip reveal">
+          <span class="offer__trust-item"><span class="offer__trust-icon">🔒</span> Confidential</span>
+          <span class="offer__trust-item"><span class="offer__trust-icon">⚡</span> Same-Week Availability</span>
+          <span class="offer__trust-item"><span class="offer__trust-icon">💬</span> English & Bahasa Indonesia</span>
+        </div>
       </div>
     </section>
 
     <section class="cta" id="contact">
+      <div class="cta__particles">
+        <span class="cta__particle"></span><span class="cta__particle"></span><span class="cta__particle"></span><span class="cta__particle"></span>
+        <span class="cta__particle"></span><span class="cta__particle"></span><span class="cta__particle"></span><span class="cta__particle"></span>
+      </div>
+      <div class="cta__grid-pattern"></div>
       <div class="container container--wide">
-        <div>
-          <h2 class="cta__headline">You've Scrolled This Far. That Tells Me Something.</h2>
+        <div class="cta__content reveal-left">
+          <h2 class="cta__headline">You've Scrolled This Far. <span>That Tells Me Something.</span></h2>
           <p class="cta__body">Most business owners never get help. They tell themselves they'll figure it out next quarter. Next year. And then three years pass, and the ceiling is still there.</p>
           <p class="cta__highlight">You're different. You're reading this because you know your business has more potential — and you're ready to unlock it.</p>
           <div class="cta__button-group">
-            <a href="#" class="btn btn--primary btn--lg">Start Your Growth Diagnostic — Free</a>
-            <p class="cta__note">No commitment. No sales pitch. Just a conversation about where you are and where you want to go.</p>
+            <a href="#" class="btn btn--primary btn--lg btn--glow">Start Your Growth Diagnostic — Free</a>
+            <p class="cta__note">No commitment. No sales pitch. Just a conversation.</p>
             <p class="cta__note">Currently booking 2 weeks out. Limited to 4 sessions per month.</p>
           </div>
         </div>
-        <div class="cta__image-wrapper">
-          <img src="images/cta-candid.png" alt="Let's talk about your business growth" class="cta__image" width="500" height="281" loading="lazy">
+        <div class="cta__image-wrapper reveal-right">
+          <img src="images/cta-candid.png" alt="Let's talk about your business growth" class="cta__image" width="500" height="281" loading="lazy" data-tilt="6">
         </div>
       </div>
     </section>
@@ -330,13 +446,19 @@
   </main>
 
   <footer class="footer">
+    <div class="footer__grid-pattern"></div>
     <div class="container container--wide">
       <div class="footer__grid">
-        <div>
-          <p class="footer__brand-name">Scale <span>Architects</span></p>
+        <div class="footer__column">
+          <a href="#" class="footer__brand-name">Scale <span>Architects</span></a>
           <p class="footer__brand-desc">Data-driven business growth consulting for companies doing $1M–$10M. We turn stagnant revenue into predictable, scalable growth.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">𝕏</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube">▶</a>
+          </div>
         </div>
-        <div>
+        <div class="footer__column">
           <p class="footer__column-title">Navigation</p>
           <div class="footer__links">
             <a href="#home">Home</a>
@@ -346,7 +468,7 @@
             <a href="#testimonials">Testimonials</a>
           </div>
         </div>
-        <div>
+        <div class="footer__column">
           <p class="footer__column-title">Services</p>
           <div class="footer__links">
             <a href="#offer">Growth Diagnostic</a>
@@ -355,11 +477,27 @@
             <a href="#offer">Executive Coaching</a>
           </div>
         </div>
-        <div>
+        <div class="footer__column">
           <p class="footer__column-title">Contact</p>
-          <p class="footer__contact-item">📧 hello@scalearchitects.com</p>
-          <p class="footer__contact-item">📱 +62 812-3456-7890</p>
-          <p class="footer__contact-item">📍 Jakarta, Indonesia</p>
+          <p class="footer__contact-item">
+            <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            hello@scalearchitects.com
+          </p>
+          <p class="footer__contact-item">
+            <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            +62 812-3456-7890
+          </p>
+          <p class="footer__contact-item">
+            <svg class="footer__contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.2.5.2.7 0 .3-.3 7.3-6.4 7.3-11.8 0-4.4-3.6-8-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            Jakarta, Indonesia
+          </p>
+          <div class="footer__newsletter">
+            <p class="footer__newsletter-text">Get growth insights in your inbox</p>
+            <form class="footer__newsletter-form" onsubmit="return false;">
+              <input type="email" placeholder="Your email" class="footer__newsletter-input">
+              <button type="submit" class="footer__newsletter-btn">Subscribe</button>
+            </form>
+          </div>
         </div>
       </div>
       <div class="footer__bottom">
@@ -367,6 +505,7 @@
         <p class="footer__tagline">Business growth doesn't happen by accident. Let's build it intentionally.</p>
       </div>
     </div>
+    <button class="footer__scroll-top" aria-label="Scroll to top">↑</button>
   </footer>
 
   <script type="module" src="js/script.js"></script>
