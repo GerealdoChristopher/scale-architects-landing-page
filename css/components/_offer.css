@@ -1,0 +1,140 @@
+.offer {
+  padding: var(--section-padding-y) 0;
+  background-color: var(--clr-bg-primary);
+}
+
+.offer .container {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.offer__headline {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary-800);
+  text-align: center;
+  margin-bottom: var(--space-sm);
+  letter-spacing: var(--ls-tight);
+}
+
+.offer__subheadline {
+  font-size: var(--fs-body-lg);
+  color: var(--clr-text-muted);
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.offer__card {
+  background-color: var(--clr-bg-white);
+  border-radius: var(--radius-xl);
+  border: var(--border-thin) solid var(--border-color-light);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2xl);
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+}
+
+.offer__card-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary-800);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: var(--border-thin) solid var(--border-color-light);
+}
+
+.offer__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.offer__feature {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.offer__feature-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--clr-success);
+  margin-top: 2px;
+  font-size: var(--fs-body-lg);
+}
+
+.offer__feature-text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--clr-text-secondary);
+}
+
+.offer__feature-text strong {
+  color: var(--clr-text-primary);
+}
+
+.offer__pricing {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.offer__price {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-extrabold);
+  color: var(--clr-primary-800);
+  line-height: 1;
+}
+
+.offer__price-original {
+  font-size: var(--fs-body-lg);
+  color: var(--clr-text-light);
+  text-decoration: line-through;
+  margin-left: var(--space-sm);
+}
+
+.offer__cta {
+  display: flex;
+  justify-content: center;
+}
+
+.offer__guarantee {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background-color: var(--clr-success-bg);
+  border-radius: var(--radius-md);
+  border: var(--border-thin) solid var(--clr-success);
+  text-align: center;
+}
+
+.offer__guarantee-title {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-primary-800);
+  margin-bottom: var(--space-2xs);
+}
+
+.offer__guarantee-text {
+  font-size: var(--fs-small);
+  color: var(--clr-text-secondary);
+  font-style: italic;
+}
+
+.offer__note {
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 640px) {
+  .offer__card {
+    padding: var(--space-lg);
+  }
+
+  .offer__price {
+    font-size: var(--fs-h1);
+  }
+}
